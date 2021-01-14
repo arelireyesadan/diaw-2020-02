@@ -32,6 +32,15 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ['babel-loader']
             },
+            {
+                // decirle el termino de los archivos
+                test: /\.css$/,
+                // Los loaders se ejecutan en el orden en que los acomodamos
+                // primero se ejecuta css-loader
+                // css-loader: lee todos los archivos CSS y los regresa en un string
+                // style-loader: modulo que inyecta los css al documento en una etiqueta style
+                use: ['style-loader', 'css-loader']
+            },
         ]
     },
     // 5. le pondremos un plugin para utilizar eslint
