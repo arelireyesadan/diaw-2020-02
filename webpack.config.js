@@ -1,4 +1,5 @@
 const path = require('path')
+const EsLintPlugin = require("eslint-webpack-plugin")
 
 module.exports = {
     // 1. Especificar archivo de entrada que va a tomar webpack para el frontend
@@ -32,5 +33,7 @@ module.exports = {
                 use: ['babel-loader']
             },
         ]
-    }
+    },
+    // 5. le pondremos un plugin para utilizar eslint
+    plugins: [new EsLintPlugin()]
 }
