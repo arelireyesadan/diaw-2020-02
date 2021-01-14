@@ -18,5 +18,19 @@ module.exports = {
         compress: true,
         // directorio de distribucion (lo hará desde la raiz)
         publicPath: '/'
+    },
+    //4. le diremos que vamos a utilizar un nuevo modulo (babel)
+    module: {
+        rules: [
+            //Regla que va a permitir entender a babel
+            // JS se lo va a pasar a babel y babel lo escribira de forma moderna
+            // Todos los archivos JS ahora serán babel
+            {
+                test: /\.(js)$/,
+                // queremos que solo busque en la carpeta src
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            },
+        ]
     }
 }
