@@ -39,7 +39,7 @@ module.exports = {
                 // primero se ejecuta css-loader
                 // css-loader: lee todos los archivos CSS y los regresa en un string
                 // style-loader: modulo que inyecta los css al documento en una etiqueta style
-                use: ['style-loader', 'css-loader']
+                use: ['style-loader', 'css-loader', 'postcss-loader']
             },
         ]
     },
